@@ -10,5 +10,17 @@
     "name": "Another App",
     "description": "另一个出色的应用，满足您的各种需求",
     "icon": "🚀"
+  },
+  {
+    "id": "third-app",
+    "name": "Third App",
+    "description": "专业的第三方应用，提供企业级解决方案",
+    "icon": "💼"
+  },
+  {
+    "id": "fourth-app",
+    "name": "Fourth App",
+    "description": "轻量级辅助工具，让你的生活更便捷",
+    "icon": "⚡"
   }
 ]
