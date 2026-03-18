@@ -1,0 +1,14 @@
+[
+  {
+    "id": "my-app",
+    "name": "My App",
+    "description": "这是我的第一个应用，提供优质的服务体验",
+    "icon": "📱"
+  },
+  {
+    "id": "another-app",
+    "name": "Another App",
+    "description": "另一个出色的应用，满足您的各种需求",
+    "icon": "🚀"
+  }
+]
