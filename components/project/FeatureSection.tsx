@@ -2,6 +2,7 @@ import React from 'react'
 import './FeatureSection.css'
 import FeatureCard from './FeatureCard'
 import ImageFeatureCard from './ImageFeatureCard'
+import { cn } from '@/lib/utils'
 import type { FeatureSectionData, FeatureCardData } from '@/lib/docs'
 
 interface FeatureSectionProps {
@@ -26,7 +27,30 @@ const FeatureSection: React.FC<FeatureSectionProps> = ({ section }) => {
 }
 
 function CardWrapper({ card }: { card: FeatureCardData }) {
-  const wrapperClass = getWrapperClass(card)
+  const colSize = card.colSize
+  const defaultCol = 'col-span-1 md:col-span-6 lg:col-span-6'
+
+  const xsClass = colSize?.xs === '6' ? 'col-span-6'
+    : colSize?.xs === '4' ? 'col-span-4'
+    : colSize?.xs === '3' ? 'col-span-3'
+    : colSize?.xs === '8' ? 'col-span-8'
+    : !colSize ? '' : ''
+
+  const mdClass = colSize?.md === '12' ? 'md:col-span-12'
+    : colSize?.md === '4' ? 'md:col-span-4'
+    : colSize?.md === '3' ? 'md:col-span-3'
+    : colSize?.md === '8' ? 'md:col-span-8'
+    : colSize ? '' : 'md:col-span-6'
+
+  const lgClass = colSize?.lg === '12' ? 'lg:col-span-12'
+    : colSize?.lg === '6' ? 'lg:col-span-6'
+    : colSize?.lg === '3' ? 'lg:col-span-3'
+    : colSize?.lg === '8' ? 'lg:col-span-8'
+    : !colSize ? '' : 'lg:col-span-4'
+
+  const wrapperClass = colSize
+    ? cn(xsClass, mdClass, lgClass)
+    : defaultCol
 
   if (card.type === 'image') {
     return (
@@ -52,23 +76,6 @@ function CardWrapper({ card }: { card: FeatureCardData }) {
       />
     </div>
   )
-}
-
-function getWrapperClass(card: FeatureCardData): string {
-  const colSize = card.colSize
-  if (!colSize) {
-    return 'col-span-1 md:col-span-6 lg:col-span-6'
-  }
-
-  const xs = colSize.xs || '12'
-  const md = colSize.md || '6'
-  const lg = colSize.lg || '4'
-
-  const xsClass = xs === '12' ? 'col-span-1' : `col-span-${xs}`
-  const mdClass = md === '6' ? 'md:col-span-6' : md === '4' ? 'md:col-span-4' : md === '12' ? 'md:col-span-12' : md === '3' ? 'md:col-span-3' : md === '8' ? 'md:col-span-8' : ''
-  const lgClass = lg === '4' ? 'lg:col-span-4' : lg === '6' ? 'lg:col-span-6' : lg === '12' ? 'lg:col-span-12' : lg === '3' ? 'lg:col-span-3' : lg === '8' ? 'lg:col-span-8' : ''
-
-  return `${xsClass} ${mdClass} ${lgClass}`.trim()
 }
 
 export default FeatureSection
