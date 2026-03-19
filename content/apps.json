@@ -3,7 +3,22 @@
     "id": "my-app",
     "name": "My App",
     "description": "这是我的第一个应用，提供优质的服务体验",
-    "icon": "📱"
+    "icon": "📱",
+    "footer": {
+      "iosAppStoreUrl": "https://apps.apple.com/app/example",
+      "iosMinVersion": "iOS 16.0 及以上版本",
+      "copyrightName": "🧩拼图助手",
+      "contactEmail": "297190869@qq.com",
+      "customerServiceHours": "9:00-18:00",
+      "quickLinks": {
+        "faq": "/my-app/md/faq",
+        "contact": "/my-app/md/contact"
+      },
+      "legal": {
+        "privacy": "/my-app/md/privacy",
+        "terms": "/my-app/md/terms"
+      }
+    }
   },
   {
     "id": "another-app",
