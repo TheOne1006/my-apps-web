@@ -37,5 +37,25 @@
     "name": "Fourth App",
     "description": "轻量级辅助工具，让你的生活更便捷",
     "icon": "⚡"
+  },
+  {
+    "id": "solver-jigsaw-puzzle",
+    "name": "拼图助手",
+    "description": "iOS 设备上的本地拼图辅助工具，智能识别拼图图片，快速定位拼图块位置",
+    "icon": "🧩",
+    "footer": {
+      "iosAppStoreUrl": "https://apps.apple.com/app/6756803843",
+      "copyrightName": "🧩拼图助手",
+      "contactEmail": "297190869@qq.com",
+      "customerServiceHours": "9:00-18:00",
+      "quickLinks": {
+        "faq": "/solver-jigsaw-puzzle/faq",
+        "contact": "mailto:297190869@qq.com"
+      },
+      "legal": {
+        "privacy": "/solver-jigsaw-puzzle/privacy",
+        "terms": "/solver-jigsaw-puzzle/terms"
+      }
+    }
   }
 ]
