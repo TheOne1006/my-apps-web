@@ -1,5 +1,3 @@
-import { Footer } from "@/components/footer"
-
 export default function DocsLayout({
   children,
 }: {
@@ -10,7 +8,6 @@ export default function DocsLayout({
       <main className="flex-1">
         {children}
       </main>
-      <Footer />
     </div>
   )
 }
