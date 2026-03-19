@@ -1,5 +1,4 @@
 import { notFound } from 'next/navigation'
-import Link from 'next/link'
 import { getApp, getApps, getDoc, getDocPaths } from '@/lib/docs'
 
 interface PageProps {
@@ -25,7 +24,7 @@ export async function generateMetadata({ params }: PageProps) {
   if (!doc) return { title: 'Not Found' }
 
   return {
-    title: `${doc.meta.title} - Legal Docs`,
+    title: `${doc.meta.title}`,
     description: doc.meta.description,
   }
 }
@@ -43,15 +42,6 @@ export default async function DocPage({ params }: PageProps) {
 
   return (
     <article className="container px-4 py-12 mx-auto max-w-3xl">
-      <nav className="mb-8">
-        <Link
-          href={`/${appId}`}
-          className="inline-flex items-center text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100"
-        >
-          ← {appMeta.name}
-        </Link>
-      </nav>
-
       <div className="prose dark:prose-invert max-w-none">
         <Content />
       </div>
