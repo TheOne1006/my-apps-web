@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: PageProps) {
   if (!appMeta) return { title: 'Not Found' }
 
   return {
-    title: `${appMeta.name} - Legal Docs`,
+    title: `${appMeta.name} - Docs`,
     description: appMeta.description,
   }
 }

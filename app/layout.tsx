@@ -3,7 +3,7 @@ import { ThemeProvider } from '@/components/theme-provider'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Legal Docs',
+  title: 'Docs',
   description: '多应用法律文档展示站点',
 }
 

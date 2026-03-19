@@ -9,7 +9,7 @@ export default function DocsLayout({
         {children}
       </main>
       <footer className="py-6 text-center text-sm text-gray-500 dark:text-gray-400 border-t">
-        © {new Date().getFullYear()} Legal Docs. All rights reserved.
+        © {new Date().getFullYear()} Docs. All rights reserved.
       </footer>
     </div>
   )

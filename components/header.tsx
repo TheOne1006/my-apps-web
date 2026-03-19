@@ -7,7 +7,7 @@ interface HeaderProps {
 }
 
 export function Header({ appName, appIcon }: HeaderProps) {
-  const name = appName ?? 'Legal Docs'
+  const name = appName ?? 'Docs'
   const icon = appIcon ?? '📄'
 
   return (
