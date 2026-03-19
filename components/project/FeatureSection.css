@@ -1,0 +1,38 @@
+.feature-section {
+  padding: 4rem 1rem;
+}
+
+.section-content {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--section-title-color, #111827);
+}
+
+.dark .section-title {
+  color: var(--section-title-color-dark, #f9fafb);
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .feature-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

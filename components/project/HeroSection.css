@@ -1,0 +1,41 @@
+.hero-section {
+  padding: 4rem 1rem;
+  background-color: var(--hero-bg, #f9fafb);
+}
+
+.dark .hero-section {
+  background-color: var(--hero-bg-dark, #111827);
+}
+
+.hero-content {
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: var(--hero-title-color, #111827);
+}
+
+.dark .hero-title {
+  color: var(--hero-title-color-dark, #f9fafb);
+}
+
+.hero-title-line {
+  display: block;
+}
+
+.hero-description {
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: var(--hero-desc-color, #6b7280);
+  max-width: 36rem;
+  margin: 0 auto;
+}
+
+.dark .hero-description {
+  color: var(--hero-desc-color-dark, #9ca3af);
+}

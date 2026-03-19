@@ -25,21 +25,33 @@ app/               # Next.js App Router pages
     [app]/
       layout.tsx   # App layout (Header + params validation)
       page.tsx     # App detail: doc list
+      project/
+        page.tsx   # Project card renderer (card layout, MDX-driven)
       [...slug]/
         page.tsx   # MDX doc renderer (prose layout)
   layout.tsx       # Root layout (ThemeProvider, html lang="zh-CN")
   globals.css      # Tailwind v4 imports + CSS variables
   not-found.tsx    # 404 page
 
-components/        # React components (Header, Footer, AppCard, ThemeToggle, ThemeProvider)
+components/        # React components
+  project/         # Project page components (HeroSection, FeatureSection, FeatureCard, ImageFeatureCard + CSS)
+  Header.tsx       # Navigation header
+  Footer.tsx       # Footer
+  AppCard.tsx      # Home page app cards
+  ThemeToggle.tsx  # Dark mode toggle
+  ThemeProvider.tsx # Theme context provider
+  AppFooter.tsx    # App-specific footer with download links
 lib/
-  docs.ts          # Content reading utilities (getApps, getApp, getDocs, getDoc, getDocPaths)
-  config.ts        # Site-wide config (siteFooter) and AppFooter types
+  docs.ts          # Content utilities (getApps, getApp, getDocs, getDoc, getDocPaths, getProject, getProjectPaths)
+  config.ts        # Site-wide config and AppFooter types
   utils.ts         # cn() utility using clsx + tailwind-merge
 
 content/           # MDX documents + app metadata
   apps.json        # App registry (id, name, description, icon, optional footer config)
-  {appId}/         # Per-app MDX files (privacy.mdx, legal/terms.mdx, etc.)
+  {appId}/         # Per-app content
+    *.mdx          # Legal docs (privacy.mdx, terms.mdx, etc.) — export metadata
+    project.mdx    # Project showcase page — export projectData
+    images/        # Project showcase images (referenced by project.mdx)
 ```
 
 ## Architecture
@@ -47,18 +59,30 @@ content/           # MDX documents + app metadata
 ### Routing
 - `/` → home page listing all apps
 - `/:appId` → app detail page listing its docs
+- `/:appId/project` → Project showcase page with card layout (MDX-driven, requires `project.mdx`)
 - `/:appId/:slug` → MDX doc rendered with `@tailwindcss/typography` prose styles
 
 ### Content System
 - Apps are defined in `content/apps.json`
-- MDX files in `content/{appId}/` export `metadata` with `title` and `description`
+- Legal docs: MDX files export `metadata` with `title` and `description`
+- Project showcase: `content/{appId}/project.mdx` exports `projectData` with `hero` and `sections` arrays
 - `lib/docs.ts` uses React `cache()` for deduplication, reads apps.json and dynamically imports MDX modules
 - `generateStaticParams()` in doc routes pre-builds all app+doc paths at build time
+- Project route auto-detects apps with `project.mdx` via `getProjectPaths()`
 
 ### MDX Rendering
 - Configured via `@next/mdx` in `next.config.ts`
 - `mdx-components.tsx` provides custom component overrides (h1-h3, p, a, ul, ol, code, pre, blockquote)
 - `@tailwindcss/typography` plugin provides prose styling with `dark:prose-invert`
+
+### Project Card System
+- Project pages use card-based layout (separate from prose docs)
+- `content/{appId}/project.mdx` exports `projectData` object with:
+  - `hero`: `{ title: string[], description: string }` for hero section
+  - `sections`: array of `{ id, title, backgroundColor?, cards[] }` for feature sections
+- Cards: text cards (`type: "feature"`, optional `icon`, `iconColor`) or image cards (`type: "image"`, `imageUrl`, `layout: "text-top"|"text-bottom"`, optional `colSize`)
+- Images in `content/{appId}/images/` directory, referenced via relative path `./images/xxx.png`
+- Components: `HeroSection`, `FeatureSection`, `FeatureCard`, `ImageFeatureCard` in `components/project/`
 
 ### Theme
 - `next-themes` with `'use client'` ThemeProvider in root layout
@@ -77,3 +101,10 @@ content/           # MDX documents + app metadata
 - `next-themes` for dark mode
 - `clsx` + `tailwind-merge` for className merging
 - Vitest for unit testing
+
+## Active Technologies
+- TypeScript / Next.js 16 + React 19 + `@next/mdx`, `@tailwindcss/typography`, `next-themes` (002-project-card-mdx)
+- Filesystem — MDX content in `content/{appId}/`, images in `content/{appId}/images/` (002-project-card-mdx)
+
+## Recent Changes
+- 002-project-card-mdx: Added TypeScript / Next.js 16 + React 19 + `@next/mdx`, `@tailwindcss/typography`, `next-themes`

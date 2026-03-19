@@ -21,6 +21,55 @@ export interface DocInfo {
   meta: DocMeta
 }
 
+// =============================================================================
+// Project Card Types
+// =============================================================================
+
+export interface ColSize {
+  xs?: string
+  md?: string
+  lg?: string
+}
+
+export interface HeroSectionData {
+  title: string[]
+  description: string
+}
+
+export interface TextCardData {
+  id: string
+  title: string
+  subtitle?: string
+  type?: 'feature'
+  icon?: string
+  iconColor?: string
+}
+
+export interface ImageCardData {
+  id: string
+  title: string
+  subtitle?: string
+  type: 'image'
+  imageUrl: string
+  imageAlt?: string
+  layout?: 'text-top' | 'text-bottom'
+  colSize?: ColSize
+}
+
+export type FeatureCardData = TextCardData | ImageCardData
+
+export interface FeatureSectionData {
+  id: string
+  title: string
+  backgroundColor?: 'light' | 'white'
+  cards: FeatureCardData[]
+}
+
+export interface ProjectMDX {
+  hero: HeroSectionData
+  sections: FeatureSectionData[]
+}
+
 // 读取 APP 列表配置
 export const getApps = cache(async (): Promise<AppMeta[]> => {
   const content = await fs.readFile(
@@ -98,5 +147,32 @@ export const getDoc = cache(async (
     }
   } catch {
     return null
+  }
+})
+
+// =============================================================================
+// Project Card Data
+// =============================================================================
+
+export interface ProjectInfo {
+  data: ProjectMDX
+}
+
+export const getProject = cache(async (appId: string): Promise<ProjectMDX | null> => {
+  try {
+    const mod = await import(`@/content/${appId}/project.mdx`)
+    return mod.projectData ?? null
+  } catch {
+    return null
+  }
+})
+
+export const getProjectPaths = cache(async (appId: string): Promise<boolean> => {
+  try {
+    const appDir = path.join(process.cwd(), 'content', appId)
+    await fs.access(path.join(appDir, 'project.mdx'))
+    return true
+  } catch {
+    return false
   }
 })
