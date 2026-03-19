@@ -43,6 +43,24 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {children}
       </pre>
     ),
+    table: ({ children }) => (
+      <table className="prose-table w-full my-4">{children}</table>
+    ),
+    thead: ({ children }) => (
+      <thead className="prose-thead">{children}</thead>
+    ),
+    tbody: ({ children }) => (
+      <tbody className="prose-tbody">{children}</tbody>
+    ),
+    tr: ({ children }) => (
+      <tr className="prose-tr border-b border-gray-200 dark:border-gray-700">{children}</tr>
+    ),
+    th: ({ children }) => (
+      <th className="prose-th text-left px-4 py-2 font-semibold bg-gray-50 dark:bg-gray-800">{children}</th>
+    ),
+    td: ({ children }) => (
+      <td className="prose-td px-4 py-2">{children}</td>
+    ),
     ...components,
   }
 }
