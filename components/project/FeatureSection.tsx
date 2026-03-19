@@ -15,7 +15,7 @@ const FeatureSection: React.FC<FeatureSectionProps> = ({ section }) => {
     <section className={`feature-section py-16 ${bgClass}`}>
       <div className="section-content">
         <h2 className="section-title">{section.title}</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {section.cards.map((card) => (
             <CardWrapper key={card.id} card={card} />
           ))}
