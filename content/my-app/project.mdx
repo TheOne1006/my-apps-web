@@ -1,9 +1,39 @@
+import { HeroSection, FeatureGrid, FeatureCard, StepList, DataTable } from '@/components/mdx'
+
 export const metadata = {
   title: '项目简介',
   description: '关于 My App 的项目简介。',
 }
 
+<HeroSection
+  title="My App"
+  subtitle="这是一个示例项目页面，展示 MDX 组件的使用方式"
+/>
 
-```h1
-# 项目简介
-```
+<FeatureGrid cols={2}>
+  <FeatureCard
+    icon="⚡"
+    title="快速高效"
+    description="采用先进技术，提供流畅的使用体验"
+  />
+  <FeatureCard
+    icon="🔒"
+    title="安全可靠"
+    description="数据安全是我们的首要任务"
+  />
+</FeatureGrid>
+
+<StepList
+  steps={[
+    { title: "第一步", description: "开始使用应用" },
+    { title: "第二步", description: "探索更多功能" }
+  ]}
+/>
+
+<DataTable
+  headers={["功能", "状态"]}
+  rows={[
+    ["核心功能", "✅ 已上线"],
+    ["高级功能", "🚧 开发中"]
+  ]}
+/>
