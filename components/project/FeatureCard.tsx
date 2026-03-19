@@ -6,6 +6,7 @@ interface FeatureCardProps {
   iconColor?: string
   title: string
   subtitle?: string
+  className?: string
 }
 
 const iconColorMap: Record<string, string> = {
@@ -19,9 +20,10 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
   iconColor = 'stories',
   title,
   subtitle,
+  className,
 }) => {
   return (
-    <div className="feature-card">
+    <div className={`feature-card ${className ?? ''}`}>
       <div className="feature-card-header">
         {icon && (
           <div className="feature-icon">
