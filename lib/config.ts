@@ -18,15 +18,16 @@ export interface AppFooterConfig {
   legal?: AppFooterLegal
 }
 
-export interface AppMeta {
-  id: string
-  name: string
-  description: string
-  icon: string
-  footer?: AppFooterConfig
+export type { AppMeta } from './docs'
+
+interface SiteFooterConfig {
+  copyright: { name: string; year: number }
+  contact: { email: string; links: { label: string; url: string }[] }
+  icp?: string
+  customerServiceHours: string
 }
 
-export const siteFooter = {
+export const siteFooter: SiteFooterConfig = {
   copyright: {
     name: "ai-scan.top",
     year: 2026,
