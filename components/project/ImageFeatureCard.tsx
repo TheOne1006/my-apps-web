@@ -19,55 +19,29 @@ const ImageFeatureCard: React.FC<ImageFeatureCardProps> = ({
   layout = 'text-top',
 }) => {
   const [imgError, setImgError] = useState(false)
-  const isTextTop = layout === 'text-top'
 
   return (
-    <div className={`image-feature-card ${layout}`}>
-      {isTextTop ? (
-        <>
-          <div className="image-card-header">
-            <h3 className="image-card-title">{title}</h3>
-            {subtitle && <p className="image-card-subtitle">{subtitle}</p>}
+    <div className={`image-feature-card image-card--${layout}`}>
+      {/* text-top: header first (text on top). text-bottom: body first (image on top). */}
+      <div className="image-card-header">
+        <h3 className="image-card-title">{title}</h3>
+        {subtitle && <p className="image-card-subtitle">{subtitle}</p>}
+      </div>
+      <div className="image-card-body">
+        {imgError ? (
+          <div className="image-placeholder">
+            <span className="placeholder-text">{imageAlt || title}</span>
           </div>
-          <div className="image-card-body">
-            {imgError ? (
-              <div className="image-placeholder">
-                <span className="placeholder-text">{imageAlt || title}</span>
-              </div>
-            ) : (
-              <img
-                src={imageUrl}
-                alt={imageAlt || title}
-                className="image-card-image"
-                loading="lazy"
-                onError={() => setImgError(true)}
-              />
-            )}
-          </div>
-        </>
-      ) : (
-        <>
-          <div className="image-card-body">
-            {imgError ? (
-              <div className="image-placeholder">
-                <span className="placeholder-text">{imageAlt || title}</span>
-              </div>
-            ) : (
-              <img
-                src={imageUrl}
-                alt={imageAlt || title}
-                className="image-card-image"
-                loading="lazy"
-                onError={() => setImgError(true)}
-              />
-            )}
-          </div>
-          <div className="image-card-header">
-            <h3 className="image-card-title">{title}</h3>
-            {subtitle && <p className="image-card-subtitle">{subtitle}</p>}
-          </div>
-        </>
-      )}
+        ) : (
+          <img
+            src={imageUrl}
+            alt={imageAlt || title}
+            className="image-card-image"
+            loading="lazy"
+            onError={() => setImgError(true)}
+          />
+        )}
+      </div>
     </div>
   )
 }
