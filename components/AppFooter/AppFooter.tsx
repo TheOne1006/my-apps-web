@@ -95,24 +95,24 @@ export function AppFooter({ config, appName }: AppFooterProps) {
                     {config.contactEmail}
                   </a>
                 </li>
-                <p className="inline-flex items-center gap-1.5 text-sm text-gray-600 dark:text-gray-300">
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                  客服时间: {config?.customerServiceHours ?? siteFooter.customerServiceHours}
-                </p>
               </ul>
+              <p className="inline-flex items-center gap-1.5 text-sm text-gray-600 dark:text-gray-300">
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                客服时间: {config?.customerServiceHours ?? siteFooter.customerServiceHours}
+              </p>
             </div>
           )}
 
@@ -121,10 +121,10 @@ export function AppFooter({ config, appName }: AppFooterProps) {
             <h3 className="text-base font-semibold text-gray-900 dark:text-gray-100 mb-4">
               法律信息
             </h3>
+            <p className="text-sm text-gray-600 dark:text-gray-300">
+              &copy; {year} {config?.copyrightName ?? siteFooter.copyright.name}
+            </p>
             <ul className="space-y-2">
-              <p className="text-sm text-gray-600 dark:text-gray-300">
-                &copy; {year} {config?.copyrightName ?? siteFooter.copyright.name}
-              </p>
               {siteFooter.icp && (
                 <li>
                   <a
