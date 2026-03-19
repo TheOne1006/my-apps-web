@@ -1,14 +1,13 @@
 export const siteFooter = {
   copyright: {
-    name: "My Apps",
+    name: "ai-scan.top",
     year: 2026,
   },
   contact: {
-    email: "support@example.com",
+    email: "support@theone.io",
     links: [
-      { label: "GitHub", url: "https://github.com/xxx" },
-      { label: "Twitter", url: "https://twitter.com/xxx" },
+      { label: "GitHub", url: "https://github.com/TheOne1006" },
     ],
   },
-  icp: "京ICP备2026000000号-1",
+  icp: "闽ICP备14001334号",
 }
