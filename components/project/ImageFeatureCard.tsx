@@ -9,6 +9,7 @@ interface ImageFeatureCardProps {
   imageUrl: string
   imageAlt?: string
   layout?: 'text-top' | 'text-bottom'
+  className?: string
 }
 
 const ImageFeatureCard: React.FC<ImageFeatureCardProps> = ({
@@ -17,11 +18,12 @@ const ImageFeatureCard: React.FC<ImageFeatureCardProps> = ({
   imageUrl,
   imageAlt = '',
   layout = 'text-top',
+  className,
 }) => {
   const [imgError, setImgError] = useState(false)
 
   return (
-    <div className={`image-feature-card image-card--${layout}`}>
+    <div className={`image-feature-card image-card--${layout} ${className ?? ''}`}>
       {/* text-top: header first (text on top). text-bottom: body first (image on top). */}
       <div className="image-card-header">
         <h3 className="image-card-title">{title}</h3>
