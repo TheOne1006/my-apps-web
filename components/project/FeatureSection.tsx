@@ -2,52 +2,29 @@ import React from 'react'
 import './FeatureSection.css'
 import FeatureCard from './FeatureCard'
 import ImageFeatureCard from './ImageFeatureCard'
-import type { FeatureSectionData, FeatureCardData } from '@/lib/docs'
+import type { FeatureSectionData } from '@/lib/docs'
 
 interface FeatureSectionProps {
   section: FeatureSectionData
+  className?: string
 }
 
-const xsMap: Record<string, string> = {
-  '12': 'col-span-1',
-  '6': 'col-span-6',
-  '4': 'col-span-4',
-  '3': 'col-span-3',
-  '8': 'col-span-8',
-}
-
-const mdMap: Record<string, string> = {
-  '12': 'md:col-span-12',
-  '6': 'md:col-span-6',
-  '4': 'md:col-span-4',
-  '3': 'md:col-span-3',
-  '8': 'md:col-span-8',
-}
-
-const lgMap: Record<string, string> = {
-  '12': 'lg:col-span-12',
-  '6': 'lg:col-span-6',
-  '4': 'lg:col-span-4',
-  '3': 'lg:col-span-3',
-  '8': 'lg:col-span-8',
-}
-
-const FeatureSection: React.FC<FeatureSectionProps> = ({ section }) => {
+const FeatureSection: React.FC<FeatureSectionProps> = ({ section, className }) => {
   const bgClass = section.backgroundColor === 'white' ? 'bg-white dark:bg-gray-50' : 'bg-gray-50 dark:bg-gray-900'
 
   return (
-    <section className={`feature-section py-16 ${bgClass}`}>
+    <section className={`feature-section py-16 ${bgClass} ${className ?? ''}`}>
       <div className="section-content">
         <h2 className="section-title">{section.title}</h2>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {section.cards.map((card) => {
             const colSize = card.colSize
-            const xs = colSize ? (xsMap[colSize.xs || '12'] ?? 'col-span-1') : 'col-span-1'
-            const md = colSize ? (mdMap[colSize.md || '6'] ?? 'md:col-span-6') : 'md:col-span-6'
-            const lg = colSize ? (lgMap[colSize.lg || '4'] ?? 'lg:col-span-4') : 'lg:col-span-4'
+            const colClass = colSize
+              ? `col-span-12 ${colSize.md !== undefined ? `md:col-span-${colSize.md}` : 'md:col-span-6'} ${colSize.lg !== undefined ? `lg:col-span-${colSize.lg}` : 'lg:col-span-4'}`
+              : 'col-span-12 md:col-span-6 lg:col-span-4'
 
             return (
-              <div key={card.id} className={`${xs} ${md} ${lg}`}>
+              <div key={card.id} className={colClass}>
                 {card.type === 'image' ? (
                   <ImageFeatureCard
                     title={card.title}
