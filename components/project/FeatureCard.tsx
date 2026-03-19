@@ -11,7 +11,6 @@ interface FeatureCardProps {
 const iconColorMap: Record<string, string> = {
   stories: 'icon-placeholder--stories',
   unlock: 'icon-placeholder--unlock',
-  purchase: 'icon-placeholder--purchase',
   security: 'icon-placeholder--security',
 }
 
@@ -42,7 +41,6 @@ function getIconEmoji(color: string): string {
   const map: Record<string, string> = {
     stories: '📖',
     unlock: '🔓',
-    purchase: '🛒',
     security: '🛡️',
   }
   return map[color] || map.stories

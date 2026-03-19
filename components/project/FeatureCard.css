@@ -81,6 +81,46 @@
   color: #d1d5db;
 }
 
+.icon-placeholder--content {
+  background-color: #dcfce7;
+  color: #22c55e;
+}
+
+.dark .icon-placeholder--content {
+  background-color: #14532d;
+  color: #bbf7d0;
+}
+
+.icon-placeholder--guidelines {
+  background-color: #ede9fe;
+  color: #7c3aed;
+}
+
+.dark .icon-placeholder--guidelines {
+  background-color: #3b0764;
+  color: #ddd6fe;
+}
+
+.icon-placeholder--isolation {
+  background-color: #fef9c3;
+  color: #ca8a04;
+}
+
+.dark .icon-placeholder--isolation {
+  background-color: #713f12;
+  color: #fef08a;
+}
+
+.icon-placeholder--data {
+  background-color: #f3f4f6;
+  color: #6b7280;
+}
+
+.dark .icon-placeholder--data {
+  background-color: #1f2937;
+  color: #d1d5db;
+}
+
 .feature-card-title {
   font-size: 1.125rem;
   font-weight: 600;

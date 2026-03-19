@@ -43,6 +43,7 @@ export interface TextCardData {
   type?: 'feature'
   icon?: string
   iconColor?: string
+  colSize?: ColSize
 }
 
 export interface ImageCardData {

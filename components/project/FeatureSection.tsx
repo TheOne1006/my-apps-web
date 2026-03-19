@@ -55,17 +55,20 @@ function CardWrapper({ card }: { card: FeatureCardData }) {
 }
 
 function getWrapperClass(card: FeatureCardData): string {
-  if (card.type !== 'image' || !card.colSize) {
+  const colSize = card.colSize
+  if (!colSize) {
     return 'col-span-1 md:col-span-6 lg:col-span-6'
   }
 
-  const xs = card.colSize.xs || '12'
-  const lg = card.colSize.lg || '4'
+  const xs = colSize.xs || '12'
+  const md = colSize.md || '6'
+  const lg = colSize.lg || '4'
 
   const xsClass = xs === '12' ? 'col-span-1' : `col-span-${xs}`
-  const lgClass = lg === '4' ? 'lg:col-span-4' : lg === '6' ? 'lg:col-span-6' : lg === '12' ? 'lg:col-span-12' : ''
+  const mdClass = md === '6' ? 'md:col-span-6' : md === '4' ? 'md:col-span-4' : md === '12' ? 'md:col-span-12' : md === '3' ? 'md:col-span-3' : md === '8' ? 'md:col-span-8' : ''
+  const lgClass = lg === '4' ? 'lg:col-span-4' : lg === '6' ? 'lg:col-span-6' : lg === '12' ? 'lg:col-span-12' : lg === '3' ? 'lg:col-span-3' : lg === '8' ? 'lg:col-span-8' : ''
 
-  return `${xsClass} ${lgClass}`.trim()
+  return `${xsClass} ${mdClass} ${lgClass}`.trim()
 }
 
 export default FeatureSection
