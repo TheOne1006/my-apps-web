@@ -1,0 +1,97 @@
+import { HeroSection, FeatureGrid, FeatureCard, InfoSection, DataTable, ImageCard } from '@/components/mdx'
+
+export const metadata = {
+  title: '项目简介',
+  description: '拼图助手 - iOS 设备上的本地拼图辅助工具，智能识别拼图图片，快速定位拼图块位置',
+}
+
+<HeroSection
+  title="拼图助手"
+  subtitle="一款专为拼图爱好者设计的 iOS 辅助工具，采用先进的图像识别技术，能够精准定位拼图块位置，帮助您快速完成拼图挑战，彻底告别盲目寻找拼图块的烦恼。"
+/>
+
+### 识别与匹配
+
+<FeatureGrid cols={3}>
+  <FeatureCard
+    icon="🔍"
+    title="OCR 识别拼图"
+    description="采用 OCR 光学字符识别技术，快速识别拼图参考图片"
+  />
+  <FeatureCard
+    icon="✂️"
+    title="精准提取"
+    description="基于边缘检测算法，精准提取每个拼图块的位置信息"
+  />
+  <FeatureCard
+    icon="🎯"
+    title="高效匹配"
+    description="智能匹配算法，快速定位每个拼图块应放置的位置"
+  />
+</FeatureGrid>
+
+### 智能辅助
+
+<FeatureGrid cols={2}>
+  <FeatureCard
+    icon="📍"
+    title="坐标高亮引导"
+    description="通过坐标标记和高亮显示，直观展示拼图块的目标位置"
+    variant="gradient"
+  />
+  <FeatureCard
+    icon="📋"
+    title="分组策略指引"
+    description="智能分组策略，帮助您按区域有序完成拼图"
+    variant="bordered"
+  />
+</FeatureGrid>
+
+### 操作便捷
+
+<FeatureGrid cols={3}>
+  <FeatureCard
+    icon="📱"
+    title="截屏即用"
+    description="截取拼图参考图后，自动识别并开始辅助"
+  />
+  <FeatureCard
+    icon="🧲"
+    title="自动吸附"
+    description="拼图块接近目标位置时自动吸附，提升操作体验"
+  />
+  <FeatureCard
+    icon="📐"
+    title="多种尺寸"
+    description="支持 9 宫格、16 宫格、25 宫格等多种拼图格式"
+  />
+</FeatureGrid>
+
+<InfoSection
+  title="隐私安全"
+  icon="🔒"
+>
+  - **本地处理**：所有图像识别和拼图匹配均在本地完成，无需上传云端
+  - **无数据收集**：应用不会收集任何用户数据，保护您的隐私安全
+  - **离线可用**：无需网络连接，随时随地使用
+</InfoSection>
+
+<DataTable
+  headers={["支持格式", "说明"]}
+  rows={[
+    ["9 宫格", "3×3 标准拼图，适合初学者"],
+    ["16 宫格", "4×4 进阶拼图，难度适中"],
+    ["25 宫格", "5×5 高级拼图，挑战极限"],
+    ["自定义尺寸", "支持自定义行列数，灵活多变"]
+  ]}
+/>
+
+<ImageCard
+  images={[
+    { src: "/images/solver-jigsaw-puzzle/iphone-home-empty.png", alt: "首页", caption: "首页空状态" },
+    { src: "/images/solver-jigsaw-puzzle/iphone-in-matching.png", alt: "匹配中", caption: "拼图匹配" },
+    { src: "/images/solver-jigsaw-puzzle/iphone-result-preview.png", alt: "结果预览", caption: "完成效果" },
+    { src: "/images/solver-jigsaw-puzzle/iphone-setting.png", alt: "设置页", caption: "设置页面" }
+  ]}
+  className="max-w-4xl mx-auto"
+/>
