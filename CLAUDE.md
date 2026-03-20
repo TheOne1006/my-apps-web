@@ -2,6 +2,10 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Communication
+
+- **Always respond in Chinese (中文回复)**
+
 ## Project Overview
 
 Multi-app legal documentation site (隐私政策、用户协议等) built with Next.js 16 (App Router), supporting MDX content rendering with dark mode and static generation.
