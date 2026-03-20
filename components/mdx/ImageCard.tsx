@@ -11,7 +11,7 @@ export function ImageCard({ image, alt, caption, className }: ImageCardProps) {
   return (
     <div
       className={cn(
-        'rounded-xl overflow-hidden bg-white dark:bg-gray-800',
+        'mt-6 mb-6 rounded-xl overflow-hidden bg-white dark:bg-gray-800',
         'border border-gray-100 dark:border-gray-700',
         className
       )}
