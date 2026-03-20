@@ -13,7 +13,7 @@ export function InfoSection({ title, description, children, icon, className }: I
   return (
     <section
       className={cn(
-        'p-6 rounded-xl bg-white dark:bg-gray-800',
+        'mt-6 mb-6 p-6 rounded-xl bg-white dark:bg-gray-800',
         'border border-gray-100 dark:border-gray-700',
         className
       )}

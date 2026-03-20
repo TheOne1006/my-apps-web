@@ -8,7 +8,7 @@ interface DataTableProps {
 
 export function DataTable({ headers, rows, className }: DataTableProps) {
   return (
-    <div className={cn('overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700', className)}>
+    <div className={cn('mt-6 mb-6 overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700', className)}>
       <table className="w-full text-sm md:text-base">
         <thead className="bg-gray-50 dark:bg-gray-800/50">
           <tr>
