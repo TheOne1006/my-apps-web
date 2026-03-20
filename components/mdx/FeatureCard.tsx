@@ -18,14 +18,14 @@ export function FeatureCard({ icon, title, description, variant = 'default', cla
         'transition-all duration-200 ease-in-out',
         'hover:-translate-y-1 hover:shadow-md',
         variant === 'bordered' && 'border-2 border-gray-200 dark:border-gray-600',
-        variant === 'gradient' && 'border-2 border-transparent bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 bg-clip-padding',
+        variant === 'gradient' && 'border-2 border-transparent',
         className
       )}
       style={
         variant === 'gradient'
           ? {
               background:
-                'linear-gradient(white, white) padding-box, linear-gradient(135deg, #667eea 0%, #764ba2 100%) border-box',
+                'linear-gradient(transparent, transparent) padding-box, linear-gradient(135deg, #667eea 0%, #764ba2 100%) border-box',
             }
           : undefined
       }
