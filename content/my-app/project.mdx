@@ -1,4 +1,4 @@
-import { HeroSection, FeatureGrid, FeatureCard, StepList, DataTable } from '@/components/mdx'
+import { HeroSection, FeatureGrid, FeatureCard, StepList, DataTable, InfoSection } from '@/components/mdx'
 
 export const metadata = {
   title: '项目简介',
@@ -10,16 +10,30 @@ export const metadata = {
   subtitle="这是一个示例项目页面，展示 MDX 组件的使用方式"
 />
 
+### 功能卡片（增强版）
+
 <FeatureGrid cols={2}>
   <FeatureCard
     icon="⚡"
     title="快速高效"
     description="采用先进技术，提供流畅的使用体验"
+    variant="gradient"
   />
   <FeatureCard
     icon="🔒"
     title="安全可靠"
     description="数据安全是我们的首要任务"
+    variant="bordered"
+  />
+  <FeatureCard
+    icon="🚀"
+    title="简单易用"
+    description="直观的界面设计，轻松上手"
+  />
+  <FeatureCard
+    icon="💡"
+    title="持续更新"
+    description="不断优化迭代，满足您的需求"
   />
 </FeatureGrid>
 
@@ -29,6 +43,16 @@ export const metadata = {
     { title: "第二步", description: "探索更多功能" }
   ]}
 />
+
+<InfoSection
+  title="隐私与安全"
+  description="我们重视您的隐私保护"
+  icon="🛡️"
+>
+  - 仅使用必要的权限
+  - 数据本地处理，不上传云端
+  - 符合相关法律法规
+</InfoSection>
 
 <DataTable
   headers={["功能", "状态"]}
