@@ -12,8 +12,7 @@ export async function generateStaticParams() {
 
   for (const app of apps) {
     const paths = await getDocPaths(app.id)
-    const filtered = paths.filter(slug => !slug.includes('project'))
-    params.push(...filtered.map((slug) => ({ app: app.id, slug })))
+    params.push(...paths.map((slug) => ({ app: app.id, slug })))
   }
 
   return params
@@ -41,10 +40,11 @@ export default async function DocPage({ params }: PageProps) {
   if (!appMeta || !doc) notFound()
 
   const Content = doc.content
+  const isProjectPage = slug.includes('project')
 
   return (
-    <article className="container px-4 py-12 mx-auto max-w-3xl">
-      <div className="prose dark:prose-invert max-w-none">
+    <article className="container px-4 py-12 mx-auto">
+      <div className={isProjectPage ? '' : 'prose dark:prose-invert max-w-none'}>
         <Content />
       </div>
     </article>
