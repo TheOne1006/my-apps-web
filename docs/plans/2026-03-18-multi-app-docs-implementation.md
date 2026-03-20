@@ -435,7 +435,7 @@ export function Header() {
       <div className="container flex h-14 items-center justify-between px-4 mx-auto max-w-5xl">
         <Link href="/" className="flex items-center space-x-2">
           <span className="text-xl">📄</span>
-          <span className="font-semibold">Legal Docs</span>
+          <span className="font-semibold">Docs</span>
         </Link>
         <ThemeToggle />
       </div>
@@ -517,7 +517,7 @@ import { ThemeProvider } from '@/components/theme-provider'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Legal Docs',
+  title: 'Docs',
   description: '多应用法律文档展示站点',
 }
 
@@ -579,7 +579,7 @@ export default function DocsLayout({
         {children}
       </main>
       <footer className="py-6 text-center text-sm text-gray-500 dark:text-gray-400 border-t">
-        © {new Date().getFullYear()} Legal Docs. All rights reserved.
+        © {new Date().getFullYear()} Docs. All rights reserved.
       </footer>
     </div>
   )
@@ -613,7 +613,7 @@ export default async function HomePage() {
   return (
     <div className="container px-4 py-12 mx-auto max-w-5xl">
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold mb-4">Legal Docs</h1>
+        <h1 className="text-4xl font-bold mb-4">Docs</h1>
         <p className="text-lg text-gray-600 dark:text-gray-400">
           选择一个应用查看其法律文档
         </p>
@@ -671,7 +671,7 @@ export async function generateMetadata({ params }: PageProps) {
   if (!appMeta) return { title: 'Not Found' }
 
   return {
-    title: `${appMeta.name} - Legal Docs`,
+    title: `${appMeta.name} - Docs`,
     description: appMeta.description,
   }
 }
@@ -775,7 +775,7 @@ export async function generateMetadata({ params }: PageProps) {
   if (!doc) return { title: 'Not Found' }
 
   return {
-    title: `${doc.meta.title} - Legal Docs`,
+    title: `${doc.meta.title} - Docs`,
     description: doc.meta.description,
   }
 }

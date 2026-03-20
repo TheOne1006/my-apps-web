@@ -10,7 +10,7 @@ export default async function HomePage() {
       <Header />
       <div className="container px-4 py-12 mx-auto max-w-5xl flex-1">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold mb-4">Legal Docs</h1>
+          <h1 className="text-4xl font-bold mb-4">Docs</h1>
           <p className="text-lg text-gray-600 dark:text-gray-400">
             选择一个应用查看其法律文档
           </p>

@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation'
+import type { Metadata } from 'next'
 import { getApp, getApps, getDoc, getDocPaths } from '@/lib/docs'
 
 interface PageProps {
@@ -11,13 +12,14 @@ export async function generateStaticParams() {
 
   for (const app of apps) {
     const paths = await getDocPaths(app.id)
-    params.push(...paths.map((slug) => ({ app: app.id, slug })))
+    const filtered = paths.filter(slug => !slug.includes('project'))
+    params.push(...filtered.map((slug) => ({ app: app.id, slug })))
   }
 
   return params
 }
 
-export async function generateMetadata({ params }: PageProps) {
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { app, slug } = await params
   const doc = await getDoc(app, slug)
 

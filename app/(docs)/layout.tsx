@@ -8,9 +8,6 @@ export default function DocsLayout({
       <main className="flex-1">
         {children}
       </main>
-      <footer className="py-6 text-center text-sm text-gray-500 dark:text-gray-400 border-t">
-        © {new Date().getFullYear()} Legal Docs. All rights reserved.
-      </footer>
     </div>
   )
 }

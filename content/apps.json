@@ -3,24 +3,61 @@
     "id": "my-app",
     "name": "My App",
     "description": "这是我的第一个应用，提供优质的服务体验",
-    "icon": "📱"
+    "icon": "📱",
+    "footer": {
+      "iosAppStoreUrl": "https://apps.apple.com/app/example",
+      "iosMinVersion": "iOS 16.0 及以上版本",
+      "copyrightName": "🧩拼图助手",
+      "contactEmail": "297190869@qq.com",
+      "customerServiceHours": "9:00-18:00",
+      "quickLinks": {
+        "faq": "/my-app/md/faq",
+        "contact": "/my-app/md/contact"
+      },
+      "legal": {
+        "privacy": "/my-app/md/privacy",
+        "terms": "/my-app/md/terms"
+      }
+    }
   },
   {
-    "id": "another-app",
-    "name": "Another App",
-    "description": "另一个出色的应用，满足您的各种需求",
-    "icon": "🚀"
+    "id": "solver-jigsaw-puzzle",
+    "name": "拼图助手",
+    "description": "iOS 设备上的本地拼图辅助工具，智能识别拼图图片，快速定位拼图块位置",
+    "icon": "🧩",
+    "footer": {
+      "iosAppStoreUrl": "https://apps.apple.com/cn/app/ai%E6%8B%BC%E5%9B%BE%E5%8A%A9%E6%89%8B/id6756803843",
+      "copyrightName": "🧩拼图助手",
+      "contactEmail": "297190869@qq.com",
+      "customerServiceHours": "9:00-18:00",
+      "quickLinks": {
+        "faq": "/solver-jigsaw-puzzle/faq",
+        "contact": "mailto:297190869@qq.com"
+      },
+      "legal": {
+        "privacy": "/solver-jigsaw-puzzle/privacy",
+        "terms": "/solver-jigsaw-puzzle/terms"
+      }
+    }
   },
   {
-    "id": "third-app",
-    "name": "Third App",
-    "description": "专业的第三方应用，提供企业级解决方案",
-    "icon": "💼"
-  },
-  {
-    "id": "fourth-app",
-    "name": "Fourth App",
-    "description": "轻量级辅助工具，让你的生活更便捷",
-    "icon": "⚡"
+    "id": "poker-scan",
+    "name": "AI记牌助手",
+    "description": "专为棋牌爱好者打造的智能辅助工具，精准捕捉牌局信息，实时统计剩余牌张",
+    "icon": "🃏",
+    "footer": {
+      "iosAppStoreUrl": "https://apps.apple.com/cn/app/ai-%E8%AE%B0%E7%89%8C%E5%8A%A9%E6%89%8B/id6753647428",
+      "copyrightName": "🃏AI记牌助手",
+      "contactEmail": "297190869@qq.com",
+      "customerServiceHours": "9:00-18:00",
+      "quickLinks": {
+        "faq": "/poker-scan/faq",
+        "contact": "mailto:297190869@qq.com"
+      },
+      "legal": {
+        "privacy": "/poker-scan/privacy",
+        "terms": "/poker-scan/terms"
+      }
+    }
   }
 ]

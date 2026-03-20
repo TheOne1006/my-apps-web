@@ -1,12 +1,14 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import { cache } from 'react'
+import type { AppFooterConfig } from '@/lib/config'
 
 export interface AppMeta {
   id: string
   name: string
   description: string
   icon: string
+  footer?: AppFooterConfig
 }
 
 export interface DocMeta {
