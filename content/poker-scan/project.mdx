@@ -31,9 +31,11 @@ export const metadata = {
 </FeatureGrid>
 
 <ImageCard
-  image="/images/poker-scan/hone-page-list.png"
-  alt="AI记牌助手首页"
-  caption="首页列表界面"
+  images={[
+    { src: "/images/poker-scan/hone-page-list.png", alt: "AI记牌助手首页", caption: "首页列表" },
+    { src: "/images/poker-scan/setting-page_540x960.png", alt: "设置页面", caption: "设置页面" },
+    { src: "/images/poker-scan/small-window-setting_540x960.png", alt: "画中画效果", caption: "画中画" }
+  ]}
 />
 
 ### 设置与自定义
@@ -50,12 +52,6 @@ export const metadata = {
     description="根据自己需求调整画中画样式"
   />
 </FeatureGrid>
-
-<ImageCard
-  image="/images/poker-scan/setting-page_540x960.png"
-  alt="设置页面"
-  caption="设置页面界面"
-/>
 
 ### 核心功能
 
@@ -78,19 +74,7 @@ export const metadata = {
     description="自动记录每一轮各家出牌情况，以直观的形式呈现出牌历史，让牌局进程透明化，提升游戏体验。"
     variant="gradient"
   />
-  <FeatureCard
-    icon="⭐"
-    title="7天免费VIP试用"
-    description="为让用户充分体验产品核心优势，现推出 7 天免费 VIP 试用权益，试用期间可解锁全部高级功能。"
-    variant="bordered"
-  />
 </FeatureGrid>
-
-<ImageCard
-  image="/images/poker-scan/small-window-setting_540x960.png"
-  alt="画中画效果"
-  caption="画中画模式"
-/>
 
 <InfoSection
   title="隐私与安全"
