@@ -59,5 +59,25 @@
         "terms": "/poker-scan/terms"
       }
     }
+  },
+  {
+    "id": "find-my-package",
+    "name": "找快递",
+    "description": "专为快递取件场景打造的 iOS 应用，帮助您在驿站或快递堆中快速找到目标包裹",
+    "icon": "📦",
+    "footer": {
+      "iosAppStoreUrl": "",
+      "copyrightName": "📦找快递",
+      "contactEmail": "297190869@qq.com",
+      "customerServiceHours": "9:00-18:00",
+      "quickLinks": {
+        "faq": "/find-my-package/faq",
+        "contact": "mailto:297190869@qq.com"
+      },
+      "legal": {
+        "privacy": "/find-my-package/privacy",
+        "terms": "/find-my-package/terms"
+      }
+    }
   }
 ]

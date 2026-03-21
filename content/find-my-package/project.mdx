@@ -1,0 +1,112 @@
+import { HeroSection, FeatureGrid, FeatureCard, InfoSection, DataTable, ImageCard } from '@/components/mdx'
+
+export const metadata = {
+  title: '项目简介',
+  description: '找快递 - 专为快递取件场景打造的 iOS 应用，帮助您在驿站或快递堆中快速找到目标包裹',
+}
+
+<HeroSection
+  title="📦找快递"
+  subtitle="专为快递取件场景打造的 iOS 应用，帮助您在驿站或快递堆中快速找到目标包裹。输入取件码前3位或后4位，打开相机扫描，即可自动高亮目标包裹。"
+/>
+
+### 功能介绍
+
+<FeatureGrid cols={2}>
+  <FeatureCard
+    icon="🏠"
+    title="首页"
+    description="添加需要寻找的取件码，点击「开始扫描」即可进入识别页面，快速定位目标包裹。"
+  />
+  <FeatureCard
+    icon="📋"
+    title="取件码管理"
+    description="支持手动输入取件码、从图片中自动识别取件码，还支持编辑和删除已有记录。"
+  />
+  <FeatureCard
+    icon="📷"
+    title="相机扫描"
+    description="实时识别快递包裹上的取件码，识别到匹配目标时自动震动并发出提示音，同时高亮显示目标区域。"
+  />
+  <FeatureCard
+    icon="⚙️"
+    title="设置"
+    description="可开关震动反馈和声音反馈，查看用户协议和隐私政策，并提交意见反馈。"
+  />
+</FeatureGrid>
+
+### 使用场景
+
+<FeatureGrid cols={3}>
+  <FeatureCard
+    icon="🏪"
+    title="驿站取件"
+    description="面对货架上几十甚至上百个快递，不用一个个核对号码。添加取件码后打开相机，对准货架一扫，目标包裹即刻高亮显示。"
+    variant="gradient"
+  />
+  <FeatureCard
+    icon="👨‍👩‍👧"
+    title="帮家人取件"
+    description="帮父母、朋友、同事取件时，他们只需要把取件码发过来。添加后直接扫描，不用记住完整的取件码号码。"
+    variant="bordered"
+  />
+  <FeatureCard
+    icon="📦"
+    title="驿站分拣"
+    description="对于驿站工作人员，可以用「后四位」模式快速扫描大批量快递，大幅提升分拣效率。"
+    variant="bordered"
+  />
+</FeatureGrid>
+
+### 技术特点
+
+<FeatureGrid cols={3}>
+  <FeatureCard
+    icon="🔒"
+    title="本地识别"
+    description="所有图像处理在设备本地完成，不上传任何图片数据。"
+    variant="gradient"
+  />
+  <FeatureCard
+    icon="🧠"
+    title="智能匹配"
+    description="支持前3位或后4位数字匹配，模糊识别快速定位目标。"
+    variant="gradient"
+  />
+  <FeatureCard
+    icon="📴"
+    title="离线可用"
+    description="核心功能无需联网，随时随地使用。"
+    variant="gradient"
+  />
+</FeatureGrid>
+
+<InfoSection
+  title="隐私与安全"
+  icon="🛡️"
+>
+  - **本地处理**：所有图像识别操作均在您的设备本地完成，图像数据不会上传至任何服务器
+  - **数据隔离**：您的取件码数据仅存储在您自己的设备上，与其他用户的数据完全隔离
+  - **最小权限**：本应用仅申请必要的系统权限（相机权限），不会申请与功能无关的权限
+</InfoSection>
+
+<DataTable
+  headers={["支持功能", "说明"]}
+  rows={[
+    ["取件码输入", "支持手动输入和图片自动识别"],
+    ["智能匹配", "前3位或后4位数字精准匹配"],
+    ["实时扫描", "相机实时识别，震动+声音提示"],
+    ["预览高亮", "支持预览匹配的快递区域"],
+    ["离线使用", "核心功能完全离线，无需网络"],
+    ["版本要求", "iOS 15.0 及以上版本"]
+  ]}
+/>
+
+<ImageCard
+  images={[
+    { src: "/images/find-my-package/home.png", alt: "首页截图", caption: "首页" },
+    { src: "/images/find-my-package/scan.png", alt: "相机扫描截图", caption: "相机扫描" },
+    { src: "/images/find-my-package/setting.png", alt: "设置页面截图", caption: "设置页面" }
+  ]}
+  className="max-w-4xl mx-auto"
+/>
